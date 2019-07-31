@@ -19,6 +19,6 @@ int		ft_printnbr(va_list ap)
 
 	c = va_arg(ap, int);
 	p = ft_itoa(c);
-	ft_putstr(p);
+	ft_putnbr(c);
 	return (ft_strlen(p));
 }

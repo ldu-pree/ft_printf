@@ -51,7 +51,7 @@ char	*ft_otoa(unsigned int nb);
 char	*ft_htoa(unsigned long nb);
 
 void	ft_putstr(const char *s1);
-void	ft_putnbr(const int nb);
+void	ft_putnbr(int n);
 int		ft_putchar(const char c);
 int		ft_putint(int c);
 int		ft_printchar(va_list ap);

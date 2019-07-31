@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldu-pree <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: thgiraud <thgiraud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 12:41:04 by ldu-pree          #+#    #+#             */
-/*   Updated: 2019/07/29 12:41:06 by ldu-pree         ###   ########.fr       */
+/*   Created: 2016/11/05 17:50:38 by thgiraud          #+#    #+#             */
+/*   Updated: 2017/02/13 14:03:49 by thgiraud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<ft_printf.h>
+#include "ft_printf.h"
 
-int		ft_putchar(char c)
+void	ft_putnbr(int n)
 {
-	write(1, &c, 1);
-	return (1);
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n *= -1;
+		}
+		if (n >= 10)
+			ft_putnbr(n / 10);
+		ft_putchar((n % 10) + '0');
+	}
 }
